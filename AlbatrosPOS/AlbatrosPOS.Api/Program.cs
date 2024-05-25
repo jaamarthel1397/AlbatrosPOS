@@ -1,4 +1,7 @@
 using AlbatrosPOS.Database.Context;
+using AlbatrosPOS.Database.Models;
+using AlbatrosPOS.Database.Repositories;
+using AlbatrosPOS.Services.ProductService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +19,9 @@ builder.Services.AddDbContext<AlbatrosDbContext>(options =>
 {
     options.UseSqlServer(connectionString, b => b.MigrationsAssembly("AlbatrosPOS.Database.SqlServerMigrations"));
 });
+
+builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 var app = builder.Build();
 
