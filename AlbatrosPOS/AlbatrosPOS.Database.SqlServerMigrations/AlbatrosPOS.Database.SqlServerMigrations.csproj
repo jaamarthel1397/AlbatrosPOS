@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Scripts\Up\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AlbatrosPOS.Database\AlbatrosPOS.Database.csproj" />
   </ItemGroup>
 

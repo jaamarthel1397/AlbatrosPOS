@@ -25,5 +25,10 @@ namespace AlbatrosPOS.Database.Models
         /// Gets or sets the amount of units currently available.
         /// </summary>
         public int Amount { get; set; }
+
+        /// <summary>
+        /// Gets or sets the product's orders.
+        /// </summary>
+        public ICollection<OrderDetail> Orders { get; set; }
     }
 }

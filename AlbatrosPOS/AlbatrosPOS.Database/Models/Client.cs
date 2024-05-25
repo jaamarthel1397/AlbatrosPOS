@@ -25,5 +25,10 @@ namespace AlbatrosPOS.Database.Models
         /// Gets or sets a collection of addresses.
         /// </summary>
         public ICollection<Address> Addresses { get; set; }
+
+        /// <summary>
+        /// Gets or sets the client's orders.
+        /// </summary>
+        public ICollection<OrderHeader> Orders { get; set; }
     }
 }
