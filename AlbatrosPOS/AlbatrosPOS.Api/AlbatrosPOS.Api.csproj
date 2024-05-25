@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\AlbatrosPOS.Database.SqlServerMigrations\AlbatrosPOS.Database.SqlServerMigrations.csproj" />
     <ProjectReference Include="..\AlbatrosPOS.Database\AlbatrosPOS.Database.csproj" />
     <ProjectReference Include="..\AlbatrosPOS.Services\AlbatrosPOS.Services.csproj" />
