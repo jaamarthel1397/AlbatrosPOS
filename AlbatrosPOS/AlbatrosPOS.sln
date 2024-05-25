@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34916.146
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Database", "AlbatrosPOS.Database\AlbatrosPOS.Database.csproj", "{FBB65E36-1C39-4F88-AC6E-6C926B7DF543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Database.SqlServerMigrations", "AlbatrosPOS.Database.SqlServerMigrations\AlbatrosPOS.Database.SqlServerMigrations.csproj", "{692427B0-4493-4C55-B2BE-9DC5E1EF0C20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Api", "AlbatrosPOS.Api\AlbatrosPOS.Api.csproj", "{F2805038-E539-4ED9-8134-21500108E3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Tests", "AlbatrosPOS.Tests\AlbatrosPOS.Tests.csproj", "{A92D3793-76A9-47A9-BA62-31D761089185}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Services", "AlbatrosPOS.Services\AlbatrosPOS.Services.csproj", "{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBB65E36-1C39-4F88-AC6E-6C926B7DF543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB65E36-1C39-4F88-AC6E-6C926B7DF543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB65E36-1C39-4F88-AC6E-6C926B7DF543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB65E36-1C39-4F88-AC6E-6C926B7DF543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692427B0-4493-4C55-B2BE-9DC5E1EF0C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692427B0-4493-4C55-B2BE-9DC5E1EF0C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692427B0-4493-4C55-B2BE-9DC5E1EF0C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692427B0-4493-4C55-B2BE-9DC5E1EF0C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2805038-E539-4ED9-8134-21500108E3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2805038-E539-4ED9-8134-21500108E3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2805038-E539-4ED9-8134-21500108E3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2805038-E539-4ED9-8134-21500108E3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92D3793-76A9-47A9-BA62-31D761089185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92D3793-76A9-47A9-BA62-31D761089185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92D3793-76A9-47A9-BA62-31D761089185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92D3793-76A9-47A9-BA62-31D761089185}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {67D5EE0D-10C7-4C5E-AFEA-605D54762BA2}
+	EndGlobalSection
+EndGlobal
