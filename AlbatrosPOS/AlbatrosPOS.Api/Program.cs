@@ -1,6 +1,9 @@
 using AlbatrosPOS.Database.Context;
 using AlbatrosPOS.Database.Models;
 using AlbatrosPOS.Database.Repositories;
+using AlbatrosPOS.Services.AddressService;
+using AlbatrosPOS.Services.ClientService;
+using AlbatrosPOS.Services.OrderService;
 using AlbatrosPOS.Services.ProductService;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,7 +24,14 @@ builder.Services.AddDbContext<AlbatrosDbContext>(options =>
 });
 
 builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
+builder.Services.AddScoped<IRepository<Address>, AddressRepository>();
+builder.Services.AddScoped<IRepository<OrderDetail>, OrderDetailRepository>();
+builder.Services.AddScoped<IRepository<OrderHeader>, OrderHeaderRepository>();
+builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IClientService, ClientService>();
 
 var app = builder.Build();
 

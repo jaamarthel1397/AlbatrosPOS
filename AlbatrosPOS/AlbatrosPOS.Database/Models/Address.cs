@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 namespace AlbatrosPOS.Database.Models
 {
     /// <summary>
-    /// Represents a product for the inventory.
+    /// Represents a client's address
     /// </summary>
-    public class Product
+    public class Address
     {
         /// <summary>
-        /// Gets or sets the id of the product.
+        /// Gets or sets the id of the address.
         /// </summary>
         public string Id { get; set; } = null!;
 
         /// <summary>
-        /// Gets or sets the description of the product.
+        /// Gets or sets the description of the address.
         /// </summary>
         public string Description { get; set; } = null!;
 
         /// <summary>
-        /// Gets or sets the amount of units currently available.
+        /// Gets or sets the client's id.
         /// </summary>
-        public int Amount { get; set; }
+        public string ClientId { get; set; } = null!;
 
         /// <summary>
-        /// Gets or sets the product's orders.
+        /// Gets or sets the address's client.
         /// </summary>
-        public ICollection<OrderDetail> Orders { get; set; }
+        public Client Client { get; set; } = null!;
     }
 }
