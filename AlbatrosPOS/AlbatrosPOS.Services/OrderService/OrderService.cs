@@ -38,6 +38,11 @@ namespace AlbatrosPOS.Services.OrderService
 
                 this.orderHeaderRepository.Create(order.Header);
                 await this.orderHeaderRepository.SaveChangesAsync();
+                foreach (var item in order.Details)
+                {
+                    item.HeaderId = order.Header.Id;
+                }
+
                 this.logger.LogInformation("Successfuly created the new order header with id {id}", order.Header.Id);
 
                 foreach (var item in order.Details)

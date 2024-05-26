@@ -10,4 +10,12 @@
     <ProjectReference Include="..\AlbatrosPOS.Database\AlbatrosPOS.Database.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UserService\Data\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.2" />
+  </ItemGroup>
+
 </Project>
