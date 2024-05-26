@@ -61,6 +61,12 @@ namespace AlbatrosPOS.Services.ClientService
                 this.logger.LogInformation("Attempting to delete the client with id {id}", id);
                 var result = await this.GetClientById(id);
                 this.clientRepository.Delete(result!);
+                
+                foreach (var item in result.Addresses)
+                {
+                    await addressService.DeleteAddress(item.Id);
+                }
+
                 await this.clientRepository.SaveChangesAsync();
                 this.logger.LogInformation("Successfuly deleted the client with id {id}", id);
                 return true;
@@ -111,6 +117,17 @@ namespace AlbatrosPOS.Services.ClientService
             {
                 this.logger.LogInformation("Attempting to update the client with id {id}", client.Id);
                 this.clientRepository.Update(client);
+                foreach (var item in client.Addresses)
+                {
+                    if (item.Id == null)
+                    {
+                        await addressService.CreateAddress(item);
+                    }
+                    else
+                    {
+                        await addressService.UpdateAddress(item);
+                    }
+                }
                 await this.clientRepository.SaveChangesAsync();
                 this.logger.LogInformation("Successfuly updated the client with id {id}", client.Id);
                 return true;

@@ -117,7 +117,10 @@ namespace AlbatrosPOS.Services.OrderService
             try
             {
                 this.logger.LogInformation("Attempting to get all the available order headers.");
-                var result = await this.orderHeaderRepository.All().ToListAsync();
+                var result = await this.orderHeaderRepository.All()
+                    .Include(a => a.Address)
+                    .Include(b => b.Client)
+                    .ToListAsync();
                 return result;
             }
             catch (Exception e)

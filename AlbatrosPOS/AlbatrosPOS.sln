@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Tests", "Albatr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.Services", "AlbatrosPOS.Services\AlbatrosPOS.Services.csproj", "{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbatrosPOS.App", "AlbatrosPOS.App\AlbatrosPOS.App.csproj", "{CECDA5FA-7611-492E-B2B5-68B62A77328A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F777DFEE-5E82-4DA8-9717-89DF1D985E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CECDA5FA-7611-492E-B2B5-68B62A77328A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CECDA5FA-7611-492E-B2B5-68B62A77328A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CECDA5FA-7611-492E-B2B5-68B62A77328A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CECDA5FA-7611-492E-B2B5-68B62A77328A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

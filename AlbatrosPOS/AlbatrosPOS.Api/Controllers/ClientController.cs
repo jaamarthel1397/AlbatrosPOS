@@ -130,6 +130,7 @@ namespace AlbatrosPOS.Api.Controllers
             {
                 result.Add(new Database.Models.Address
                 {
+                    Id = address.Id,
                     ClientId = address.ClientId,
                     Description = address.Description,
                 });

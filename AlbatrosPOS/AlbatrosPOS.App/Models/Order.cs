@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AlbatrosPOS.Api.Models
+namespace AlbatrosPOS.App.Models
 {
     public class Order
     {
@@ -35,7 +35,7 @@ namespace AlbatrosPOS.Api.Models
         public string ClientId { get; set; } = null!;
 
         [JsonPropertyName("clientName")]
-        public string? ClientName { get; set; }
+        public string ClientName { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the date and time when the order took place.
@@ -50,7 +50,7 @@ namespace AlbatrosPOS.Api.Models
         public string AddressId { get; set; } = null!;
 
         [JsonPropertyName("addressDescription")]
-        public string? AddressDescription { get; set; }
+        public string AddressDescription { get; set; } = null!;
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ namespace AlbatrosPOS.Api.Models
         public string ProductId { get; set; } = null!;
 
         [JsonPropertyName("productDescription")]
-        public string? ProductDescription { get; set; }
+        public string ProductDescription { get; set; } = null!;
 
         /// <summary>
         /// Gets or sets the amount.

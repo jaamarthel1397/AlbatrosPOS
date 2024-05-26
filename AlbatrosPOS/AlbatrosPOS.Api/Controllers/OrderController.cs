@@ -144,6 +144,8 @@ namespace AlbatrosPOS.Api.Controllers
                     AddressId = header.AddressId,
                     ClientId = header.ClientId,
                     DateTime = header.DateTime,
+                    AddressDescription = header.Address.Description,
+                    ClientName = header.Client.Name,
                 });
             }
 

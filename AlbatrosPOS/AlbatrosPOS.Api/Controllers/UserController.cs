@@ -25,7 +25,10 @@ namespace AlbatrosPOS.Api.Controllers
 
             if (result != string.Empty)
             {
-                return Ok(new { Token = result });
+                return Ok(new { 
+                    Token = result,
+                    UserName = user.Username,
+                });
             }
 
             return BadRequest();
