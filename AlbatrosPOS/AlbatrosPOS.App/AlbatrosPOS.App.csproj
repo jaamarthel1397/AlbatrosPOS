@@ -16,7 +16,6 @@
     <Folder Include="Forms\Client\" />
     <Folder Include="Forms\Address\" />
     <Folder Include="Forms\Product\" />
-    <Folder Include="Forms\Order\" />
   </ItemGroup>
 
 </Project>

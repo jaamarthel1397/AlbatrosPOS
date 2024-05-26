@@ -38,7 +38,7 @@ namespace AlbatrosPOS.App
                     JwtManager.Token = authenticateResponse.Token;
                     JwtManager.Username = authenticateResponse.Username;
                     Hide();
-                    MainMenu mainMenu = new MainMenu();
+                    MainMenu mainMenu = new MainMenu(this._client);
                     mainMenu.Show();
                 }
             }

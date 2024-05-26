@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace AlbatrosPOS.Api.Models
+namespace AlbatrosPOS.App.Models
 {
     public class Address
     {
