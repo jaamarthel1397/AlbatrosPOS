@@ -23,67 +23,103 @@ namespace AlbatrosPOS.Api.Controllers
 
         // GET: api/<ProductController>
         [HttpGet]
-        public async Task<IEnumerable<Product>> Get()
+        public async Task<IActionResult> Get()
         {
             var result = await this.productService.GetAllProducts();
 
-            return result;
+            List<Models.Product> products = new List<Models.Product>();
+            foreach (var product in result)
+            {
+                products.Add(new Models.Product
+                {
+                    Id = product.Id,
+                    Amount = product.Amount,
+                    Description = product.Description,
+                });
+            }
+
+            return Ok(products);
         }
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public async Task<Product?> Get(string id)
+        public async Task<IActionResult> Get(string id)
         {
             var result = await this.productService.GetProductById(id);
 
-            return result;
+            if (result == null)
+            {
+                BadRequest();
+            }
+
+            return Ok(new Models.Product
+            {
+                Id = result.Id,
+                Amount = result.Amount,
+                Description = result.Description,
+            });
         }
 
         // POST api/<ProductController>
         [HttpPost]
-        public async Task<bool> Post([FromBody] Product product)
+        public async Task<IActionResult> Post([FromBody] Models.Product product)
         {
             if (product == null)
             {
-                return false;
+                return BadRequest();
             }
 
             if (product.Description == null || product.Amount == null)
             {
-                return false;
+                return BadRequest();
             }
 
-            var result = await this.productService.CreateProduct(product);
+            var result = await this.productService.CreateProduct(new Product
+            {
+                Id = product.Id,
+                Amount = product.Amount,
+                Description = product.Description,
+            });
 
-            return result;
+            return Ok(result);
         }
 
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
-        public async Task<bool> Put(string id, [FromBody] Product product)
+        public async Task<IActionResult> Put(string id, [FromBody] Models.Product product)
         {
             if (product == null)
             {
-                return false;
+                return BadRequest();
             }
 
             if (product.Description == null || product.Amount == null)
             {
-                return false;
+                return BadRequest();
             }
 
-            var result = await this.productService.UpdateProduct(product);
+            var result = await this.productService.UpdateProduct(new Product
+            {
+                Id = product.Id,
+                Amount = product.Amount,
+                Description = product.Description,
+            });
 
-            return result;
+            return Ok(result);
         }
 
         // DELETE api/<ProductController>/5
         [HttpDelete("{id}")]
-        public async Task<bool> Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             var result = await this.productService.DeleteProduct(id);
 
-            return result;
+            if (result == false)
+            {
+                return Ok();
+            }
+
+            return BadRequest();
         }
     }
 }

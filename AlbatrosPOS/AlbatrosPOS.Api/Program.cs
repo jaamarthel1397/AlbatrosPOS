@@ -3,9 +3,14 @@ using AlbatrosPOS.Database.Models;
 using AlbatrosPOS.Database.Repositories;
 using AlbatrosPOS.Services.AddressService;
 using AlbatrosPOS.Services.ClientService;
+using AlbatrosPOS.Services.Options;
 using AlbatrosPOS.Services.OrderService;
 using AlbatrosPOS.Services.ProductService;
+using AlbatrosPOS.Services.UserService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,10 +33,30 @@ builder.Services.AddScoped<IRepository<Address>, AddressRepository>();
 builder.Services.AddScoped<IRepository<OrderDetail>, OrderDetailRepository>();
 builder.Services.AddScoped<IRepository<OrderHeader>, OrderHeaderRepository>();
 builder.Services.AddScoped<IRepository<Client>, ClientRepository>();
+builder.Services.AddScoped<IRepository<User>, UserRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAddressService, AddressService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.Configure<JwtOptions>(
+    builder.Configuration.GetSection(nameof(JwtOptions)));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration.GetSection(nameof(JwtOptions)).GetValue<string>("Issuer"),
+            ValidAudience = builder.Configuration.GetSection(nameof(JwtOptions)).GetValue<string>("Audience"),
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+                builder.Configuration.GetSection(nameof(JwtOptions)).GetValue<string>("Key"))),
+        };
+    });
 
 var app = builder.Build();
 
@@ -44,6 +69,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
