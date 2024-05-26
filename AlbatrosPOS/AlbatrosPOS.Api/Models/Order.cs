@@ -35,7 +35,7 @@ namespace AlbatrosPOS.Api.Models
         public string ClientId { get; set; } = null!;
 
         [JsonPropertyName("clientName")]
-        public string ClientName { get; set; } = null!;
+        public string? ClientName { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time when the order took place.
@@ -50,7 +50,7 @@ namespace AlbatrosPOS.Api.Models
         public string AddressId { get; set; } = null!;
 
         [JsonPropertyName("addressDescription")]
-        public string AddressDescription { get; set; } = null!;
+        public string? AddressDescription { get; set; }
     }
 
     /// <summary>
@@ -77,7 +77,7 @@ namespace AlbatrosPOS.Api.Models
         public string ProductId { get; set; } = null!;
 
         [JsonPropertyName("productDescription")]
-        public string ProductDescription { get; set; } = null!;
+        public string? ProductDescription { get; set; }
 
         /// <summary>
         /// Gets or sets the amount.

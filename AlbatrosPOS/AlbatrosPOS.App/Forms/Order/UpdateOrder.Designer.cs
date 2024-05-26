@@ -1,6 +1,6 @@
 ﻿namespace AlbatrosPOS.App.Forms.Order
 {
-    partial class CreateOrder
+    partial class UpdateOrder
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             panel1 = new Panel();
             getAddressesBt = new Button();
-            createOrderBt = new Button();
+            updateOrderBt = new Button();
             amountDd = new NumericUpDown();
             label4 = new Label();
             productCb = new ComboBox();
@@ -50,7 +50,7 @@
             // 
             panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(getAddressesBt);
-            panel1.Controls.Add(createOrderBt);
+            panel1.Controls.Add(updateOrderBt);
             panel1.Controls.Add(amountDd);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(productCb);
@@ -61,10 +61,10 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(clientsCb);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(22, 26);
+            panel1.Location = new Point(24, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(2013, 1174);
-            panel1.TabIndex = 0;
+            panel1.TabIndex = 1;
             // 
             // getAddressesBt
             // 
@@ -76,15 +76,15 @@
             getAddressesBt.UseVisualStyleBackColor = true;
             getAddressesBt.Click += getAddressesBt_Click;
             // 
-            // createOrderBt
+            // updateOrderBt
             // 
-            createOrderBt.Location = new Point(1781, 258);
-            createOrderBt.Name = "createOrderBt";
-            createOrderBt.Size = new Size(198, 34);
-            createOrderBt.TabIndex = 10;
-            createOrderBt.Text = "Crear pedido";
-            createOrderBt.UseVisualStyleBackColor = true;
-            createOrderBt.Click += createOrderBt_Click;
+            updateOrderBt.Location = new Point(1781, 258);
+            updateOrderBt.Name = "updateOrderBt";
+            updateOrderBt.Size = new Size(198, 34);
+            updateOrderBt.TabIndex = 10;
+            updateOrderBt.Text = "Editar pedido";
+            updateOrderBt.UseVisualStyleBackColor = true;
+            updateOrderBt.Click += updateOrderBt_Click;
             // 
             // amountDd
             // 
@@ -127,7 +127,7 @@
             addProductBt.TabIndex = 5;
             addProductBt.Text = "Agregar producto";
             addProductBt.UseVisualStyleBackColor = true;
-            addProductBt.Click += AddProductBt_Click;
+            addProductBt.Click += addProductBt_Click;
             // 
             // detailsDgv
             // 
@@ -172,15 +172,15 @@
             label1.TabIndex = 0;
             label1.Text = "Cliente:";
             // 
-            // CreateOrder
+            // UpdateOrder
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2047, 1217);
+            ClientSize = new Size(2053, 1200);
             Controls.Add(panel1);
-            Name = "CreateOrder";
-            Text = "CreateOrder";
-            Load += CreateOrder_Load;
+            Name = "UpdateOrder";
+            Text = "UpdateOrder";
+            Load += UpdateOrder_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)amountDd).EndInit();
@@ -191,17 +191,17 @@
         #endregion
 
         private Panel panel1;
+        private Button getAddressesBt;
+        private Button updateOrderBt;
+        private NumericUpDown amountDd;
+        private Label label4;
+        private ComboBox productCb;
+        private Label label3;
+        private Button addProductBt;
         private DataGridView detailsDgv;
         private ComboBox addressCb;
         private Label label2;
         private ComboBox clientsCb;
         private Label label1;
-        private ComboBox productCb;
-        private Label label3;
-        private Button addProductBt;
-        private Button createOrderBt;
-        private NumericUpDown amountDd;
-        private Label label4;
-        private Button getAddressesBt;
     }
 }

@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\Client\" />
     <Folder Include="Forms\Address\" />
-    <Folder Include="Forms\Product\" />
   </ItemGroup>
 
 </Project>

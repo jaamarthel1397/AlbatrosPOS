@@ -114,7 +114,7 @@ namespace AlbatrosPOS.Api.Controllers
         {
             var result = await this.productService.DeleteProduct(id);
 
-            if (result == false)
+            if (result)
             {
                 return Ok();
             }
