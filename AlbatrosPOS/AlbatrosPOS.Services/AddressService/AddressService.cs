@@ -10,19 +10,19 @@ namespace AlbatrosPOS.Services.AddressService
     public class AddressService : IAddressService
     {
         private readonly IRepository<Address> addressRepository;
-        private readonly IClientService clientService;
+        private readonly IRepository<Client> clientRepository;
         private readonly ILogger<AddressService> logger;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressService"/> class.
         /// </summary>
         /// <param name="addressRepository">A repository that handles address data.</param>
-        /// <param name="clientService">A service that handles client data.</param>
+        /// <param name="clientRepository">A service that handles client data.</param>
         /// <param name="logger">A generic interface for logging.</param>
-        public AddressService(IRepository<Address> addressRepository, IClientService clientService, ILogger<AddressService> logger)
+        public AddressService(IRepository<Address> addressRepository, IRepository<Client> clientRepository, ILogger<AddressService> logger)
         {
             this.addressRepository = addressRepository;
-            this.clientService = clientService;
+            this.clientRepository = clientRepository;
             this.logger = logger;
         }
 
@@ -32,7 +32,7 @@ namespace AlbatrosPOS.Services.AddressService
             try
             {
                 this.logger.LogInformation("Attempting to create a new address");
-                var client = await this.clientService.GetClientById(newAddress.ClientId);
+                var client = await this.clientRepository.FindAsync(newAddress.ClientId);
                 if (client == null)
                 {
                     this.logger.LogError("A client with the client id {id} does not exist.", newAddress.ClientId);

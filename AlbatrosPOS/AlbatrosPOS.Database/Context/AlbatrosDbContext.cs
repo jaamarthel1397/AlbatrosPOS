@@ -41,6 +41,11 @@ namespace AlbatrosPOS.Database.Context
         /// </summary>
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
+        /// <summary>
+        /// Represents the users table.
+        /// </summary>
+        public DbSet<User> Users { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -162,6 +167,17 @@ namespace AlbatrosPOS.Database.Context
                 .WithMany(y => y.Orders)
                 .HasForeignKey(x => x.ProductId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+                .Property(p => p.Username)
+                .HasMaxLength(50);
+
+            modelBuilder.Entity<User>()
+                .HasKey(p => p.Username);
+
+            modelBuilder.Entity<User>()
+                .Property(p => p.Password)
+                .HasMaxLength(1000);
         }
     }
 }

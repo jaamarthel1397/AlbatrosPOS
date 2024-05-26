@@ -94,7 +94,7 @@ namespace AlbatrosPOS.Services.ClientService
             try
             {
                 this.logger.LogInformation("Attempting to get the client with id {id}", id);
-                var result = await this.clientRepository.FindAsync(id);
+                var result = await this.clientRepository.Filter(x => x.Id == id).Include(y => y.Addresses).FirstAsync();
                 return result;
             }
             catch (Exception e)
